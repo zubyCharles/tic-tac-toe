@@ -1,0 +1,146 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(45deg, #380076, #0cbaba);
+    background-size: cover;
+}
+
+.info {
+    width: fit-content;
+    color: #380076;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+.game {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 0;
+    margin: 5rem auto 3.5rem auto;
+}
+
+
+.box {
+    width: 99%;
+    height: 7rem;
+    color: #38ff36;
+    text-align: center;
+    font-size: 5rem;
+    background: transparent;
+    border: 1px solid #fff;
+}
+
+.game div:nth-child(1) {
+    border-top: none;
+    border-left: none;
+}
+
+.game div:nth-child(2) {
+    border-top: none;
+}
+
+.game div:nth-child(3) {
+    border-top: none;
+    border-right: none;
+}
+
+.game div:nth-child(4) {
+    border-left: none;
+}
+
+.game div:nth-child(5) {
+    /**/
+}
+
+.game div:nth-child(6) {
+    border-right: none;
+}
+
+.game div:nth-child(7) {
+    border-bottom: none;
+    border-left: none;
+}
+
+.game div:nth-child(8) {
+    border-bottom: none;
+}
+
+.game div:nth-child(9) {
+    border-bottom: none;
+    border-right: none;
+}
+
+.game-over {
+    width: fit-content;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 1.5rem auto;
+    font-size: 36px;
+}
+
+.btn {
+    width: 50%;
+    padding-bottom: 10rem;
+    margin: 2rem auto;
+}
+
+.btn button {
+    width: 120%;
+    transform: translateX(-10%);
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 1.5rem;
+    padding: 1.2rem;
+    background: #38ff36;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+.btn button:hover {
+    opacity: 0.9;
+}
+
+@media (min-width: 400px) {
+    .btn {
+        padding-bottom: 18rem;
+    }
+}
+
+@media (min-width:1024px) {
+    .game {
+        width: 40%;
+    }
+
+
+    .box {
+        height: 10rem;
+    }
+
+    .btn {
+        width: 30%;
+        margin: 5rem auto;
+        padding-bottom: 0;
+    }
+
+    .btn button {
+        font-size: 24px;
+        border-radius: 1.5rem;
+        padding: 2rem 3rem;
+
+    }
+
+    .btn button:hover {
+        opacity: 0.9;
+    }
+}
