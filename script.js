@@ -24,7 +24,9 @@ for (let box of boxArray) {
     ) {
       return;
     }
+
     GAME_STATE.move_Count += 1;
+
     if (GAME_STATE.player_1 && !GAME_STATE.player_2) {
       box.textContent = 'X';
       box.style.color = '#f55451';
@@ -36,13 +38,17 @@ for (let box of boxArray) {
       GAME_STATE.player_1 = !GAME_STATE.player_1;
       GAME_STATE.player_2 = !GAME_STATE.player_2;
     }
+
     if (GAME_STATE.move_Count === 9) {
-      //getWinner();
       GAME_STATE.game_On = !GAME_STATE.game_On;
-      //return;
     }
-    whosTurn();
-    getWinner();
+
+    setTimeout(() => {
+      getWinner();
+
+      whosTurn();
+    }, 10);
+
     console.log(GAME_STATE.move_Count);
   });
 }
@@ -53,11 +59,14 @@ function startGame() {
   if (GAME_STATE.game_On) {
     return;
   }
+
   for (let box of boxArray) {
     box.textContent = '';
   }
+
   GAME_STATE.game_On = true;
   GAME_STATE.player_1 = true;
+  GAME_STATE.player_2 = false;
 
   endDisplay.textContent = '';
 
@@ -102,49 +111,54 @@ function getWinner() {
     (boxArray[0].textContent === boxArray[3].textContent &&
       boxArray[0].textContent === boxArray[6].textContent)
   ) {
-    if (boxArray[0].textContent === '') return;
+    if (boxArray[0].textContent === '') null;
     else {
       gameOver(boxArray[0].textContent);
     }
-  } else if (
+  }
+  if (
     boxArray[1].textContent === boxArray[4].textContent &&
     boxArray[1].textContent === boxArray[7].textContent
   ) {
-    if (boxArray[1].textContent === '') return;
+    if (boxArray[1].textContent === '');
     else {
       gameOver(boxArray[1].textContent);
     }
-  } else if (
+  }
+  if (
     (boxArray[2].textContent === boxArray[5].textContent &&
       boxArray[2].textContent === boxArray[8].textContent) ||
     (boxArray[2].textContent === boxArray[4].textContent &&
       boxArray[2].textContent === boxArray[6].textContent)
   ) {
-    if (boxArray[2].textContent === '') return;
+    if (boxArray[2].textContent === '') null;
     else {
       gameOver(boxArray[2].textContent);
     }
-  } else if (
+  }
+  if (
     boxArray[3].textContent === boxArray[4].textContent &&
     boxArray[3].textContent === boxArray[5].textContent
   ) {
-    if (boxArray[3].textContent === '') return;
+    if (boxArray[3].textContent === '') null;
     else {
       gameOver(boxArray[3].textContent);
     }
-  } else if (
+  }
+  if (
     boxArray[6].textContent === boxArray[7].textContent &&
     boxArray[6].textContent === boxArray[8].textContent
   ) {
-    if (boxArray[6].textContent === '') return;
+    if (boxArray[6].textContent === '') null;
     else {
       gameOver(boxArray[6].textContent);
     }
-  } else if (
+  }
+  if (
     boxArray[0].textContent === boxArray[4].textContent &&
     boxArray[0].textContent === boxArray[8].textContent
   ) {
-    if (boxArray[0].textContent === '') return;
+    if (boxArray[0].textContent === '') null;
     else {
       gameOver(boxArray[0].textContent);
     }
