@@ -120,7 +120,7 @@ function getWinner() {
     boxArray[1].textContent === boxArray[4].textContent &&
     boxArray[1].textContent === boxArray[7].textContent
   ) {
-    if (boxArray[1].textContent === '');
+    if (boxArray[1].textContent === '') null;
     else {
       gameOver(boxArray[1].textContent);
     }
