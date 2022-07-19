@@ -92,7 +92,13 @@ function gameOver(player) {
     info.textContent = "It's a tie";
   }
 
+  resetGame();
+
   endDisplay.textContent = 'game over!';
+}
+
+function resetGame() {
+  //This resets the GAME_STATE object to default prop values
 
   GAME_STATE.game_On = false;
   GAME_STATE.move_Count = 0;
